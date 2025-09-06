@@ -4,6 +4,7 @@ import { Home } from './Pages/Home'
 import { Agence } from './Pages/Agence'
 import { Project } from './Pages/Project'
 import { Navbar } from './Components/Navigation/Navbar'
+import Fullscreennav from './Components/Navigation/Fullscreennav'
 
 const App = () => {
 
@@ -12,6 +13,7 @@ const App = () => {
   return (
     <div>
       <Navbar />
+        <Fullscreennav />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/agence' element={<Agence />} />

@@ -15,3 +15,43 @@
 body{
     overflow-x: hidden;
 }
+
+
+.link {
+  position: relative;
+  overflow: hidden;
+}
+
+.moveLink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%; /* for animation loop */
+  height: 100%; /* make it cover full height */
+  display: flex;
+  align-items: center; /* vertically center contents */
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 1; /* sits under text, increase if needed */
+}
+
+.link h1 {
+  position: relative;
+  /* z-index: ; text always stays visible above */
+}
+
+.link:hover .moveLink {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.moveX {
+  animation: moveAnimation 6s linear infinite;
+  display: flex;
+}
+
+@keyframes moveAnimation {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
